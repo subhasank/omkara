@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Omkara Capital Revised_9</title>
+
+		<!-- jQuery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Google Font Link -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Font Awesome -->
+		<script src="https://use.fontawesome.com/38ceda47c4.js"></script>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+		></script>
+
+		<script type="text/javascript" src="daterangepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="daterangepicker.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header id="header">
+			<div>
+				<img src="logo.png" alt="logo" height="37px" width="100px" />
+				<nav>
+					<div id="mm-result-data" class="main-menu-dropdown">
+						<p>Result Data</p>
+						<ul class="options">
+							<li>Option 1</li>
+							<li>Option 2</li>
+							<li>Option 3</li>
+							<li>Option 4</li>
+							<li>Option 5</li>
+							<li>Option 6</li>
+						</ul>
+					</div>
+					<div id="mm-check-database" class="main-menu-dropdown">
+						<p>Check Database</p>
+						<ul class="options">
+							<li>Option 1</li>
+							<li>Option 2</li>
+							<li>Option 3</li>
+							<li>Option 4</li>
+							<li>Option 5</li>
+							<li>Option 6</li>
+						</ul>
+					</div>
+					<div id="mm-valuation-data" class="main-menu-dropdown">
+						<p>Valuation Data</p>
+						<ul class="options">
+							<li>Option 1</li>
+							<li>Option 2</li>
+							<li>Option 3</li>
+							<li>Option 4</li>
+							<li>Option 5</li>
+							<li>Option 6</li>
+						</ul>
+					</div>
+					<div id="mm-result-calendar" class="main-menu-dropdown">
+						<p>Result Calendar</p>
+						<ul class="options">
+							<li>Option 1</li>
+							<li>Option 2</li>
+							<li>Option 3</li>
+						</ul>
+					</div>
+					<div id="mm-dorensic-data" class="main-menu-dropdown">
+						<p>Forensic Data</p>
+						<ul class="options">
+							<li>Option 1</li>
+						</ul>
+					</div>
+					<div id="mm-volume-data" class="main-menu-dropdown">
+						<p>Volume Data</p>
+						<ul class="options">
+							<li>Option 1</li>
+							<li>Option 2</li>
+						</ul>
+					</div>
+
+					<!-- <a href="">Check Database</a>
+					<a href="">Valuation Data</a>
+					<a href="">Result Calendar</a>
+					<a href="">Forensic Data</a>
+					<a href="">Volume Data</a> -->
+				</nav>
+
+				<!-- <div
+					id="sector-dropdown"
+					class="filter custom-dropdown wrapper-dropdown-3"
+					tabindex="1"
+				>
+					<span>Sector</span>
+					<i class="fa fa-sort-down"></i>
+					<ul class="options" tabindex="1">
+						<li>Select None</li>
+						<li>Option 1</li>
+						<li>Option 2</li>
+						<li>Option 3</li>
+						<li>Option 4</li>
+						<li>Option 5</li>
+						<li>Option 6</li>
+					</ul>
+				</div> -->
+			</div>
+
+			<div>
+				<div class="header-search search-bar">
+					<input
+						class=""
+						type="text"
+						name="header-search"
+						id=""
+						placeholder="Search anything here"
+					/>
+					<i
+						class="fa fa-search"
+						style="font-size: 15px; color: #f47a14; cursor: pointer"
+					></i>
+				</div>
+
+				<div class="header-user-account">
+					<img
+						class="circular-avatar"
+						src="https://via.placeholder.com/32x32.png?text=P"
+					/>
+					<p>
+						WELCOME <br />
+						PARAG!
+					</p>
+				</div>
+			</div>
+		</header>
+
+		<!-- Filters and Options -->
+		<div class="body-except-header">
+			<div id="filters-section" class="filters-section">
+				<div class="date-selector-section">
+					<div class="picker-div filter filter-btn">
+						<span></span><i class="fa fa-sort-down"></i>
+					</div>
+					<div class="show-all-data-div filter orange-btn filter-btn">
+						<p>Show All Data</p>
+					</div>
+				</div>
+				<div class="filters">
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="market-cap-greater"
+							id="market-cap-greater"
+							placeholder="Market Cap (>)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="market-cap-less"
+							id="market-cap-less"
+							placeholder="Market Cap (<)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="sales-yoy"
+							id="sales-yoy"
+							placeholder="Sales (YOY%)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ebdita-yoy"
+							id="ebdita-yoy"
+							placeholder="EBDITA (YOY%)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="pat-yoy"
+							id="pat-yoy"
+							placeholder="PAT (YOY%)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="sales-qoq"
+							id="sales-qoq"
+							placeholder="Sales (QOQ%)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ebdita-qoq"
+							id="ebdita-qoq"
+							placeholder="EBDITA (QOQ%)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="pat-qoq"
+							id="pat-qoq"
+							placeholder="PAT (QOQ%)"
+							autocomplete="off"
+						/>
+					</div>
+
+					<div
+						id="ebdita-to-dropdown"
+						class="filter custom-dropdown wrapper-dropdown-1"
+						tabindex="1"
+					>
+						<span>EBDITA - TO +</span>
+						<i class="fa fa-sort-down"></i>
+						<div class="filter-dropdown-container">
+							<ul class="options options-with-arrow" tabindex="1">
+								<div>
+									<li>Select None</li>
+									<li>Option 1</li>
+									<li>Option 2</li>
+									<li>Option 3</li>
+									<li>Option 4</li>
+									<li>Option 5</li>
+									<li>Option 6</li>
+									<li>Option 7</li>
+									<li>Option 8</li>
+									<li>Option 9</li>
+									<li>Option 10</li>
+									<li>Option 11</li>
+									<li>Option 12</li>
+									<li>Option 13</li>
+								</div>
+							</ul>
+						</div>
+					</div>
+
+					<div
+						id="pat-to-dropdown"
+						class="filter custom-dropdown wrapper-dropdown-2"
+						tabindex="1"
+					>
+						<span>PAT - TO +</span>
+						<i class="fa fa-sort-down"></i>
+						<ul class="options options-with-arrow" tabindex="1">
+							<div>
+								<li>Select None</li>
+								<li>Option 1</li>
+								<li>Option 2</li>
+								<li>Option 3</li>
+								<li>Option 4</li>
+								<li>Option 5</li>
+								<li>Option 6</li>
+							</div>
+						</ul>
+					</div>
+					<div class="filter-checkbox filter-text">
+						<input
+							type="checkbox"
+							name="current-quarter"
+							id="current-quarter"
+							autocomplete="off"
+							class="input-assumpte"
+						/>
+						<label for="current-quarter"
+							><span style="display: block; margin-left: 9px"
+								>Current Quarter</span
+							>
+						</label>
+					</div>
+					<!--  -->
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ttm-pb"
+							id="ttm-pb"
+							placeholder="TTM (P/B)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ttm-pe"
+							id="ttm-pe"
+							placeholder="TTM (P/E)"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ttm-sales-abs"
+							id="ttm-sales-abs"
+							placeholder="TTM Sales Abs"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ttm-pat-abs"
+							id="ttm-pat-abs"
+							placeholder="TTM Pat Abs"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="ltp"
+							id="ltp"
+							placeholder="LTP"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="roce"
+							id="roce"
+							placeholder="ROCE"
+							autocomplete="off"
+						/>
+					</div>
+					<div
+						id="sector-dropdown"
+						class="filter custom-dropdown wrapper-dropdown-3"
+						tabindex="1"
+					>
+						<span>Sector</span>
+						<i class="fa fa-sort-down"></i>
+						<ul class="options options-with-arrow" tabindex="1">
+							<div>
+								<li>Select None</li>
+								<li>Option 1</li>
+								<li>Option 2</li>
+								<li>Option 3</li>
+								<li>Option 4</li>
+								<li>Option 5</li>
+								<li>Option 6</li>
+							</div>
+						</ul>
+					</div>
+					<div
+						id="industry-dropdown"
+						class="filter custom-dropdown wrapper-dropdown-4"
+						tabindex="1"
+					>
+						<span>Industry</span>
+						<i class="fa fa-sort-down"></i>
+						<ul class="options options-with-arrow" tabindex="1">
+							<div>
+								<li>Select None</li>
+								<li>Option 1</li>
+								<li>Option 2</li>
+								<li>Option 3</li>
+								<li>Option 4</li>
+								<li>Option 5</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+								<li>Option 6</li>
+							</div>
+						</ul>
+					</div>
+					<div
+						id="company-dropdown"
+						class="filter custom-dropdown wrapper-dropdown-5"
+						tabindex="1"
+					>
+						<span>Company</span>
+						<i class="fa fa-sort-down"></i>
+						<ul class="options options-with-arrow" tabindex="1">
+							<div>
+								<li>Select None</li>
+								<li>Option 1</li>
+								<li>Option 2</li>
+								<li>Option 3</li>
+								<li>Option 4</li>
+								<li>Option 5</li>
+								<li>Option 6</li>
+							</div>
+						</ul>
+					</div>
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="gross-profit"
+							id="gross-profit"
+							placeholder="Gross Profit"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter-text filter-count">
+						<p>Count: 62</p>
+					</div>
+
+					<!--  -->
+
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="gross-margin"
+							id="gross-margin"
+							placeholder="Gross Margin"
+							autocomplete="off"
+						/>
+					</div>
+
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="extra-1"
+							id="extra-1"
+							placeholder="Extra 1"
+							autocomplete="off"
+						/>
+					</div>
+
+					<div class="filter filter-input">
+						<input
+							type="text"
+							name="extra-2"
+							id="extra-2"
+							placeholder="Extra 2"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="filter filter-btn submit orange-btn">
+						<p>Submit</p>
+					</div>
+					<div onclick="onResetClick()" class="filter filter-btn reset">
+						<p>Reset</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sheet buttons Section -->
+			<div class="sheet-button-section">
+				<div class="sheet-buttons">
+					<ul>
+						<li class="active sheet-btn sheet-1">Sheet1</li>
+						<li class="sheet-btn sheet-2">Sheet2</li>
+						<li class="sheet-btn sheet-3">Sheet3</li>
+					</ul>
+				</div>
+
+				<div class="export-and-filter">
+					<div
+						id="checkbox-filter-dropdown"
+						class="checkbox-filter-btn custom-dropdown wrapper-dropdown-6"
+						tabindex="1"
+					>
+						<span>Select Filters</span>
+						<i class="fa fa-filter"></i>
+
+						<ul
+							class="options options-with-arrow checkbox-options"
+							tabindex="1"
+						>
+							<div>
+								<li>
+									<i class="fa fa-times"></i>
+									<p class="text">Clear All</p>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 1"
+										id="1_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="1_check" class="text">Option 1</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 2"
+										id="2_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="2_check" class="text">Option 2</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 3"
+										id="3_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="3_check" class="text">Option 3</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 4"
+										id="4_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="4_check" class="text">Option 4</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 5"
+										id="5_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="5_check" class="text">Option 5</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 6"
+										id="6_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="6_check" class="text">Option 6</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 7"
+										id="7_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="7_check" class="text">Option 7</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 8"
+										id="8_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="8_check" class="text">Option 8</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 9"
+										id="9_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="9_check" class="text">Option 9</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 10"
+										id="10_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="10_check" class="text">Option 10</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 11"
+										id="11_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="11_check" class="text">Option 11</label>
+								</li>
+								<li class="filter-checkbox">
+									<input
+										type="checkbox"
+										name="Option 12"
+										id="12_check"
+										class="custom-checkbox input-assumpte"
+									/>
+									<label for="12_check" class="text">Option 12</label>
+								</li>
+							</div>
+						</ul>
+					</div>
+					<div class="reset export-btn">
+						<p>Export</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Table  -->
+
+			<div class="table-wrapper table-1">
+				<div class="table-container">
+					<table class="table">
+
+				<thead>
+					<tr class="table-header " >
+						<th>Company Name</th>
+						<th>Accord Code</th>
+						<th>CD ISIN No.</th>
+						<th>CD Sector</th>
+						<th>CD Industry 1</th>
+						<th>Price Date</th>
+						<th>Market Cap</th>
+						<th>Latest Price</th>
+						<th>CD Sector</th>
+						<th>CD Industry 1</th>
+						<th>Price Date</th>
+						<th>Market Cap</th>
+						<th>Latest Price</th>
+					</tr>
+				</thead>
+
+				<tbody>
+						<tr>
+							<td>
+								<div>Sheet1</div>
+							</td>
+							<td><div>22359555555555555555555555555555555</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									Nitin Spinners Private LTDs avery good company
+								</div>
+							</td>
+							<td><div>22359555555555555555555555555555555</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div>Nitin Spinners Private LTD</div>
+							</td>
+							<td><div>223595</div></td>
+							<td><div>INE503A01015</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>Retailing</div></td>
+							<td><div>7-5-2021</div></td>
+							<td><div>1871265.91</div></td>
+							<td><div>1871265.91</div></td>
+						</tr>
+				</tbody>
+			</table>
+				</div>
+			</div>
+			<div class="table-wrapper table-2">
+				<div class="table-container">
+					<table class="table ">
+				<thead>
+					<tr class="table-header">
+						<th>Company Name</th>
+						<th>Accord Code</th>
+						<th>CD ISIN No.</th>
+						<th>CD Sector</th>
+						<th>CD Industry 1</th>
+						<th>Price Date</th>
+						<th>Market Cap</th>
+						<th>Latest Price</th>
+						<th>CD Sector</th>
+						<th>CD Industry 1</th>
+						<th>Price Date</th>
+						<th>Market Cap</th>
+						<th>Latest Price</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>
+							<div>Sheet2</div>
+						</td>
+						<td><div>22359555555555555555555555555555555</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+				</tbody>
+			</table>
+				</div>
+			</div>
+			<div class="table-wrapper table-3">
+				<div class="table-container">
+					<table class="table ">
+				<thead>
+					<tr class="table-header">
+						<th>Company Name</th>
+						<th>Accord Code</th>
+						<th>CD ISIN No.</th>
+						<th>CD Sector</th>
+						<th>CD Industry 1</th>
+						<th>Price Date</th>
+						<th>Market Cap</th>
+						<th>Latest Price</th>
+						<th>CD Sector</th>
+						<th>CD Industry 1</th>
+						<th>Price Date</th>
+						<th>Market Cap</th>
+						<th>Latest Price</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>
+							<div>Sheet3</div>
+						</td>
+						<td><div>22359555555555555555555555555555555</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+					<tr>
+						<td>
+							<div>Nitin Spinners Private LTD</div>
+						</td>
+						<td><div>223595</div></td>
+						<td><div>INE503A01015</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>Retailing</div></td>
+						<td><div>7-5-2021</div></td>
+						<td><div>1871265.91</div></td>
+						<td><div>1871265.91</div></td>
+					</tr>
+				</tbody>
+			</table>
+				</div>
+			</div>
+			
+
+			<!-- Footer -->
+			<footer>
+				<img src="logo.png" alt="logo" height="37px" width="100px" />
+				<div class="copyright">
+					<p>
+						Copyright © 2021 Omkara Capital Private Limited | All rights
+						reserved
+					</p>
+					<p>For proprietay use only</p>
+				</div>
+				<div class="made-with-love">
+					<p>Made with <span class="footer-heart">❤</span> by Omkara</p>
+				</div>
+			</footer>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
